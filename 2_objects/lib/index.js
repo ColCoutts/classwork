@@ -1,0 +1,8 @@
+function AnimalConstructor(name, species) {
+    this.name = name;
+    this.species = species;
+}
+
+module.exports = {
+    AnimalConstructor
+};
