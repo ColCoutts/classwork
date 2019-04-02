@@ -1,4 +1,4 @@
-const { AnimalConstructor, animalFactory } = require('../lib/index.js');
+const { AnimalConstructor, animalFactory, animalClass } = require('../lib/index.js');
 
 describe('animal constructor function', () => {
     it('has name property', ()=> {
@@ -27,6 +27,19 @@ describe('animal constructor function', () => {
             expect(dog.speak()).toEqual('hi my name is rover and i am a dog');
         });
     });
-    
+    describe('class function', () => {
+        it('has name property', () => {
+            const dog = new animalClass('rover');
+            expect(dog.name).toEqual('rover');
+        });
+        it('has species property', () => {
+            const dog = new animalClass('rover', 'dog');
+            expect(dog.species).toEqual('dog');
+        });
+        it('has speak function', () => {
+            const dog = new animalClass('rover', 'dog');
+            expect(dog.speak()).toEqual('hi my name is rover and i am a dog');
+        });
+    });
 
 });
